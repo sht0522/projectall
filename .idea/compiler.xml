@@ -8,11 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="eurekaservice" />
         <module name="configservice" />
+        <module name="gatewayservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="configservice" target="1.8" />
       <module name="eurekaservice" target="1.8" />
+      <module name="gatewayservice" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

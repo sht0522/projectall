@@ -1,17 +1,16 @@
-package com.project.configservice;
+package com.project.gatewayservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.config.server.EnableConfigServer;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
+@EnableEurekaClient
 @SpringBootApplication
-@EnableConfigServer
-@EnableDiscoveryClient
-public class ConfigserviceApplication {
+public class GatewayserviceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ConfigserviceApplication.class, args);
+        SpringApplication.run(GatewayserviceApplication.class, args);
     }
 
 }

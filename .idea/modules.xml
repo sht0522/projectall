@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/configservice/configservice.iml" filepath="$PROJECT_DIR$/configservice/configservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/eurekaservice/eurekaservice.iml" filepath="$PROJECT_DIR$/eurekaservice/eurekaservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gatewayservice/gatewayservice.iml" filepath="$PROJECT_DIR$/gatewayservice/gatewayservice.iml" />
     </modules>
   </component>
 </project>
