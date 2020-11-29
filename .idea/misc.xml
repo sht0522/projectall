@@ -4,6 +4,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/eurekaservice/pom.xml" />
+        <option value="$PROJECT_DIR$/configservice/pom.xml" />
       </list>
     </option>
   </component>

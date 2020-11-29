@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eurekaservice" />
+        <module name="configservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="configservice" target="1.8" />
       <module name="eurekaservice" target="1.8" />
     </bytecodeTargetLevel>
   </component>
