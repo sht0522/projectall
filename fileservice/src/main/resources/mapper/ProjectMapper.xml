@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.fileservice.dao.ProjectMapper">
+    <resultMap id="project" type="com.project.fileservice.pojo.Project">
+        <!-- id相当于resultmap的引用的唯一标识-->
+        <id property="nId" column="id"/>
+        <result property="strProjectSpace" column="projectspace"/>
+        <result property="strProjectName" column="projectname"/>
+        <result property="nParentSpace" column="parentspace"/>
+    </resultMap>
+    <insert id="saveProjectSpace" parameterType="com.project.fileservice.pojo.Project">
+        insert into filespace
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="strProjectSpace != null" >
+                projectspace,
+            </if>
+            <if test="strProjectName != null" >
+                projectname,
+            </if>
+            <if test="nParentSpace != null" >
+                parentspace,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="strProjectSpace != null" >
+                #{strProjectSpace,jdbcType=VARCHAR},
+            </if>
+            <if test="strProjectName != null" >
+                #{strProjectName,jdbcType=TIMESTAMP},
+            </if>
+            <if test="nParentSpace != null" >
+                #{nParentSpace,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <select id="seletProjectTop" resultMap="project" parameterType="com.project.fileservice.pojo.Project">
+        select id,projectname,parentspace,projectspace
+        from filespace
+        where parentspace is null
+    </select>
+    <select id="seletProjectChildren" resultMap="project" parameterType="Integer">
+        select id,projectname,parentspace,projectspace
+        from filespace
+        where parentspace = #{nParentId}
+    </select>
+    <select id="seletProjectById" resultMap="project" parameterType="Integer">
+        select id,projectname,parentspace,projectspace
+        from filespace
+        where id = #{nId}
+    </select>
+
+</mapper>
